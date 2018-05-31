@@ -14,6 +14,9 @@
 		6F16FF0E20BFE1AE00988759 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F16FF0C20BFE1AE00988759 /* LaunchScreen.storyboard */; };
 		6F16FF1920BFE1AE00988759 /* werkstuk1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F16FF1820BFE1AE00988759 /* werkstuk1Tests.swift */; };
 		6F16FF2420BFE1AE00988759 /* werkstuk1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F16FF2320BFE1AE00988759 /* werkstuk1UITests.swift */; };
+		6F16FF3220BFE46E00988759 /* Persoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F16FF3120BFE46E00988759 /* Persoon.swift */; };
+		6F16FF3420BFE5B700988759 /* Adres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F16FF3320BFE5B700988759 /* Adres.swift */; };
+		6F16FF3720BFE72600988759 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F16FF3620BFE72600988759 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		6F16FF1F20BFE1AE00988759 /* werkstuk1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = werkstuk1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F16FF2320BFE1AE00988759 /* werkstuk1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = werkstuk1UITests.swift; sourceTree = "<group>"; };
 		6F16FF2520BFE1AE00988759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F16FF3120BFE46E00988759 /* Persoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persoon.swift; sourceTree = "<group>"; };
+		6F16FF3320BFE5B700988759 /* Adres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adres.swift; sourceTree = "<group>"; };
+		6F16FF3620BFE72600988759 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F16FF3720BFE72600988759 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +88,7 @@
 				6F16FF1720BFE1AE00988759 /* werkstuk1Tests */,
 				6F16FF2220BFE1AE00988759 /* werkstuk1UITests */,
 				6F16FF0120BFE1AD00988759 /* Products */,
+				6F16FF3520BFE72600988759 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +110,8 @@
 				6F16FF0720BFE1AE00988759 /* Main.storyboard */,
 				6F16FF0A20BFE1AE00988759 /* Assets.xcassets */,
 				6F16FF0C20BFE1AE00988759 /* LaunchScreen.storyboard */,
+				6F16FF3120BFE46E00988759 /* Persoon.swift */,
+				6F16FF3320BFE5B700988759 /* Adres.swift */,
 				6F16FF0F20BFE1AE00988759 /* Info.plist */,
 			);
 			path = werkstuk1;
@@ -123,6 +133,14 @@
 				6F16FF2520BFE1AE00988759 /* Info.plist */,
 			);
 			path = werkstuk1UITests;
+			sourceTree = "<group>";
+		};
+		6F16FF3520BFE72600988759 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F16FF3620BFE72600988759 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +212,11 @@
 					6F16FEFF20BFE1AD00988759 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					6F16FF1320BFE1AE00988759 = {
 						CreatedOnToolsVersion = 9.2;
@@ -260,7 +283,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F16FF0620BFE1AD00988759 /* ViewController.swift in Sources */,
+				6F16FF3420BFE5B700988759 /* Adres.swift in Sources */,
 				6F16FF0420BFE1AD00988759 /* AppDelegate.swift in Sources */,
+				6F16FF3220BFE46E00988759 /* Persoon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
