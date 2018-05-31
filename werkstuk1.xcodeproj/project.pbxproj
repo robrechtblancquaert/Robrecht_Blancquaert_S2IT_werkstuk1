@@ -17,6 +17,8 @@
 		6F16FF3220BFE46E00988759 /* Persoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F16FF3120BFE46E00988759 /* Persoon.swift */; };
 		6F16FF3420BFE5B700988759 /* Adres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F16FF3320BFE5B700988759 /* Adres.swift */; };
 		6F16FF3720BFE72600988759 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F16FF3620BFE72600988759 /* MapKit.framework */; };
+		6F16FF3920BFEA8300988759 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F16FF3820BFEA8300988759 /* TableViewController.swift */; };
+		6F16FF3B20BFF8AE00988759 /* PersoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F16FF3A20BFF8AE00988759 /* PersoonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		6F16FF3120BFE46E00988759 /* Persoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persoon.swift; sourceTree = "<group>"; };
 		6F16FF3320BFE5B700988759 /* Adres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adres.swift; sourceTree = "<group>"; };
 		6F16FF3620BFE72600988759 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6F16FF3820BFEA8300988759 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		6F16FF3A20BFF8AE00988759 /* PersoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersoonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				6F16FF0320BFE1AD00988759 /* AppDelegate.swift */,
 				6F16FF0520BFE1AD00988759 /* ViewController.swift */,
 				6F16FF0720BFE1AE00988759 /* Main.storyboard */,
+				6F16FF3820BFEA8300988759 /* TableViewController.swift */,
+				6F16FF3A20BFF8AE00988759 /* PersoonViewController.swift */,
 				6F16FF0A20BFE1AE00988759 /* Assets.xcassets */,
 				6F16FF0C20BFE1AE00988759 /* LaunchScreen.storyboard */,
 				6F16FF3120BFE46E00988759 /* Persoon.swift */,
@@ -283,8 +289,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F16FF0620BFE1AD00988759 /* ViewController.swift in Sources */,
+				6F16FF3B20BFF8AE00988759 /* PersoonViewController.swift in Sources */,
 				6F16FF3420BFE5B700988759 /* Adres.swift in Sources */,
 				6F16FF0420BFE1AD00988759 /* AppDelegate.swift in Sources */,
+				6F16FF3920BFEA8300988759 /* TableViewController.swift in Sources */,
 				6F16FF3220BFE46E00988759 /* Persoon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
