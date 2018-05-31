@@ -7,15 +7,30 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
 class PersoonViewController: UIViewController {
 
-    var persooon: Persoon
+    var persoon = Persoon()
+    
+    @IBOutlet weak var naam: UILabel!
+    @IBOutlet weak var tel: UILabel!
+    @IBOutlet weak var foto: UIImageView!
+    @IBOutlet weak var adres: UILabel!
+    @IBOutlet weak var map: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.naam.text = persoon.voornaam + " " + persoon.naam
+        self.tel.text = persoon.telefoonnummer
+        self.foto.image = persoon.foto
+        self.adres.text = persoon.adres.straat + " " + persoon.adres.huisnummer + ", " + persoon.adres.postcode + " " + persoon.adres.gemeente
+        
+        let center = CLLocationCoordinate2D(latitude: persoon.coordinaten.latitude, longitude: persoon.coordinaten.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
+        map.setRegion(region, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
