@@ -14,13 +14,16 @@
         <scene sceneID="YGL-Jv-qKS">
             <objects>
                 <viewController id="nb5-qh-ez1" customClass="MapViewController" customModule="werkstuk1" customModuleProvider="target" sceneMemberID="viewController">
-                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="hNa-Jy-uh6">
+                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="hNa-Jy-uh6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <connections>
+                            <outlet property="delegate" destination="nb5-qh-ez1" id="5LR-2Y-0Mh"/>
+                        </connections>
                     </mapView>
                     <tabBarItem key="tabBarItem" title="Map" id="slh-dZ-jNY"/>
                     <connections>
-                        <outlet property="mapView" destination="hNa-Jy-uh6" id="nur-m0-glR"/>
+                        <outlet property="mapView" destination="hNa-Jy-uh6" id="ikf-zS-zeL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YyJ-H8-Vsr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -30,12 +33,12 @@
         <!--Table-->
         <scene sceneID="T3b-Az-1QN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dcm-5w-FXE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="q4r-Wc-pIP" customClass="TableViewController" customModule="werkstuk1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="R4g-Bx-Qed">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-1"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="grP-4d-In0">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -50,8 +53,10 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Table" id="VnG-9u-Jzf"/>
+                    <tabBarItem key="tabBarItem" title="Table" id="L34-gC-bfi"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dcm-5w-FXE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="344.80000000000001" y="-84.107946026986511"/>
         </scene>
@@ -88,9 +93,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3n9-j5-Ur0">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3n9-j5-Ur0">
                                 <rect key="frame" x="16" y="122" width="343" height="216"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="aPt-Sk-EhT" appends="YES" id="rBy-Lz-azv"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adres:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAH-9D-TXC">
                                 <rect key="frame" x="16" y="357" width="49" height="21"/>
@@ -131,11 +140,49 @@
                         <outlet property="map" destination="y1R-CA-c4T" id="UpW-LZ-3cW"/>
                         <outlet property="naam" destination="C5l-bf-y2k" id="1u3-MC-5a8"/>
                         <outlet property="tel" destination="Fc2-EW-dLu" id="OgH-5y-p8y"/>
+                        <segue destination="DWt-5q-3WY" kind="show" identifier="vergroot" id="YiV-MC-PZC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYS-sZ-1f8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aPt-Sk-EhT">
+                    <connections>
+                        <action selector="tap:" destination="tT7-9V-cRJ" id="vmX-z4-zpD"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1346" y="-84"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="TEJ-Ae-nyV">
+            <objects>
+                <viewController id="DWt-5q-3WY" customClass="ImageViewController" customModule="werkstuk1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iwK-3E-1J5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="id2-S4-AAm">
+                                <rect key="frame" x="0.0" y="48" width="375" height="619"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Mj-Jb-4oS">
+                                <rect key="frame" x="16" y="10" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="tT7-9V-cRJ" kind="show" id="lFH-bG-laf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="k67-aV-GJ3"/>
+                    </view>
+                    <connections>
+                        <outlet property="foto" destination="id2-S4-AAm" id="jSB-8P-Cga"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i4r-tX-Wf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2460" y="-84"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="vTs-IP-vxM">
@@ -157,6 +204,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="lFH-bG-laf"/>
         <segue reference="3AD-Qy-qRS"/>
     </inferredMetricsTieBreakers>
 </document>

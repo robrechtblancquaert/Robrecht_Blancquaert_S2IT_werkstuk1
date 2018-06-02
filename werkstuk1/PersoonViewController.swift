@@ -31,22 +31,30 @@ class PersoonViewController: UIViewController {
         let center = CLLocationCoordinate2D(latitude: persoon.coordinaten.latitude, longitude: persoon.coordinaten.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
         map.setRegion(region, animated: true)
+        
+        foto.isUserInteractionEnabled = true
     }
-
+    
+    @IBAction func tap(_ sender: Any) {
+        performSegue(withIdentifier: "vergroot", sender: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "vergroot"
+        {
+            let vc = segue.destination as! ImageViewController
+            vc.persoon = self.persoon
+        }
     }
-    */
+    
 
 }
